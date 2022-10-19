@@ -1,0 +1,14 @@
+{"nombre":"Bingen","descripcion":"mecanico","numeroserie":"3245623","estado":"Activo","prioridad":"bajo"}
+{"nombre":"Bingen","descripcion":"mecanico","numeroserie":"3245623","estado":"Activo","prioridad":"bajo"}
+{"nombre":"snoop dogg","descripcion":"mecanico cuantico","numeroserie":"420","estado":"Inactivo","prioridad":"alto"}
+{"nombre":"snoop dogg","descripcion":"mecanico cuantico","numeroserie":"420000000","estado":"Inactivo","prioridad":"alto"}
+{"nombre":"a","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"pruebaultima","descripcion":"no has introducido nada","numeroserie":"1","estado":"Activo","prioridad":"medio"}
+{"nombre":"pruebaultima","descripcion":"sdss","numeroserie":"1","estado":"Inactivo","prioridad":"alto"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"pruebadefinitiva","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"pruebadefinitiva","descripcion":"asas","numeroserie":"1","estado":"Activo","prioridad":"bajo"}
+{"nombre":"%","descripcion":"asas","numeroserie":"1","estado":"Activo","prioridad":"bajo"}
+{"nombre":"%","descripcion":"12","numeroserie":"no has introducido nada","estado":"Activo","prioridad":"bajo"}
+{"nombre":"%","descripcion":"$","numeroserie":"no has introducido nada","estado":"Activo","prioridad":"bajo"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
