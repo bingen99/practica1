@@ -12,3 +12,28 @@
 {"nombre":"%","descripcion":"12","numeroserie":"no has introducido nada","estado":"Activo","prioridad":"bajo"}
 {"nombre":"%","descripcion":"$","numeroserie":"no has introducido nada","estado":"Activo","prioridad":"bajo"}
 {"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"\u00f1","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"    ","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"    ","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"    assas","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"bingen","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"bingen","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"bingen","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"holaaaaa","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"holaaaa","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"bingen","descripcion":"sdsd","numeroserie":"12","estado":"Activo","prioridad":"alto"}
+{"nombre":"binge","descripcion":"sd","numeroserie":"no has introducido nada","estado":"Activo","prioridad":"medio"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"no has introducido nada","descripcion":"no has introducido nada","numeroserie":"no has introducido nada","estado":"Inactivo","prioridad":"no has introducido nada"}
+{"nombre":"bingen","descripcion":"aparicio","numeroserie":"1212","estado":"Activo","prioridad":"alto"}
+{"nombre":"bingen","descripcion":"aparicio","numeroserie":"1212","estado":"Activo","prioridad":"alto"}
+{"nombre":"a","descripcion":"a","numeroserie":"1","estado":"Activo","prioridad":"medio"}
