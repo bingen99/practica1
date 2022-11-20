@@ -6,70 +6,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>tabla con formulario</title>
-
+  <link rel="stylesheet" type="text/css" href="css/tabla.css">
 </head>
 
 <body>
 
 
+  <div id="contenedor">
 
 
-
-  <table border="10" align="center" cellspacing="0">
-    <tr>
-      <th>
-        <h1><i>TABLA CON FORMULARIO</i></h1>
-      </th>
-    </tr>
-  </table><br><br><br><br>
+    <div id="navbar">
 
 
-  <table border="5" align="center" cellspacing="0">
-    <tr>
-      <th><a href="./index.html">Inicio</a></th>
-      <th><a href="./formulario.html">Formulario</a></th>
-      <th><a href="./tabla.html">Tabla</a></th>
-      <th><a href="./libre.html">Jefes DLC Bloodborne</a></th>
-      <th><a href="./libre2.html">Objetos Isaac Afterbirth +</a></th>
-    </tr>
-  </table><br><br>
+    </div>
+
+    <div id="tabla">
+      <table>
+
+        <tbody id="cuerpoTabla">
+          <label for="filtrar"></label>
+          <input type="text" placeholder="filtrar" id="filtrar" onkeyup="filtrado()">
+
+          <tr>
+            <th>Acciones</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>N.serie</th>
+            <th>Estado</th>
+            <th>Prioridad</th>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </div>
 
 
-  <table border="8" cellspacing="0" id="tabla">
+    <div id="pie">
 
+      <footer>
+        <p>Copyright: Bingen aparicio Otazua</p>
+      </footer>
 
-    <label for="filtrar"></label>
-    <input type="text" placeholder="filtrar" id="filtrar" onkeyup="filtrado()">
+    </div>
 
-
-    <tr>
-      <th>Acciones</th>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>N.serie</th>
-      <th>Estado</th>
-      <th>Prioridad</th>
-    </tr>
-
-
-    <tbody id="cuerpoTabla">
-
-    </tbody>
-
-
-  </table><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-  <footer>
-
-    <hr>
-    <p align="right">Copyright: Bingen aparicio Otazua</p>
-
-  </footer>
-
-
+  </div>
 </body>
 
-<script type="text/javascript" src="js/codigo.js"></script>
+<script type="text/javascript" src="js/codigo.js" defer></script>
+<script type="text/javascript" src="js/nav.js" defer></script>
+
 
 </html>

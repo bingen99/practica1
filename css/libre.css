@@ -1,0 +1,135 @@
+* {
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contenedor {
+    margin-top: 2px;
+
+}
+
+#navbar {
+    margin-top: 2px;
+    width: 100%;
+
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+#navbar li a:hover {
+    background-color: #111;
+}
+
+#logo {
+    text-align: center;
+    border-right: solid 6px black;
+    border-right-style: dashed;
+    width: 10%;
+    line-height: 50px;
+
+}
+
+#logo a {
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    color: black;
+}
+
+#tabla {
+    margin: 20px auto;
+    width: 900px;
+
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+}
+
+td {
+    font-style: italic;
+    font-family: optima;
+}
+
+th,
+td {
+    border: solid 2px black;
+
+
+
+}
+
+th {
+    background-color: red;
+    border-bottom: solid 5px black;
+    color: white;
+}
+
+tr:hover {
+    background-color: #369681;
+    color: white;
+}
+
+.imagen1 {
+    width: 100%;
+    height: 190px;
+
+}
+
+.imagen2 {
+    width: 100%;
+    height: 170px;
+}
+
+.imagen3 {
+    width: 100%;
+    height: 170px;
+
+}
+
+#tabla iframe {
+    width: 100%;
+
+}
+
+#pie {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+#pie footer {
+
+    border: solid 2px black;
+
+}
+
+#pie p {
+
+    text-align: center;
+}

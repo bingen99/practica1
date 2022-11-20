@@ -1,0 +1,103 @@
+* {
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contenedor {
+    margin-top: 2px;
+}
+
+#navbar {
+    width: 100%;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar li a:hover {
+    background-color: #111;
+}
+
+#logo {
+    text-align: center;
+    border-right: solid 6px black;
+    border-right-style: dashed;
+    width: 10%;
+    line-height: 50px;
+    margin-bottom: 2px;
+}
+
+#logo a {
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    color: black;
+}
+
+#imagenes img {
+    margin-right: 28px;
+    border-right: 5px solid black;
+    float: left;
+    width: 35%;
+    height: 400px;
+    margin-left: 80px;
+    padding-right: 40px;
+    margin-top: 100px;
+}
+
+#bloque1 {
+    margin-right: 40px;
+    margin-top: 85px;
+    font-size: 17px;
+}
+
+#subrayar1 {
+    border-bottom: 3px solid black;
+    margin-bottom: 5px;
+    margin-left: 613px;
+}
+
+#bloque2 {
+    margin-right: 40px;
+    font-size: 17px;
+}
+
+#subrayar2 {
+    border-bottom: 3px solid black;
+    margin-bottom: 5px;
+    margin-left: 613px;
+}
+
+#pie {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+#pie footer {
+    border: solid 2px black;
+}
+
+#pie p {
+    text-align: center;
+}

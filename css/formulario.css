@@ -1,0 +1,127 @@
+* {
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contenedor {
+    display: grid;
+    margin-top: 2px;
+}
+
+#navbar {
+    width: 100%;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+#navbar li a:hover {
+    background-color: #111;
+}
+
+#logo {
+
+    text-align: center;
+    border-right: solid 6px black;
+    border-right-style: dashed;
+    width: 10%;
+    line-height: 50px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+}
+
+#logo a {
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    color: black;
+    margin-right: 2.5px;
+}
+
+#formu {
+    background: #0d6441;
+    border: solid 3px black;
+    width: 400px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 4px;
+    font-family: 'optima';
+    color: white;
+    text-align: center;
+}
+
+.campos {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    border: 2px solid #191654;
+    font-family: 'optima';
+    font-size: 17px;
+}
+
+.radio {
+    width: 100%;
+    display: flex;
+    margin-left: 90px;
+}
+
+.radios {
+    position: relative;
+    font-size: 24px;
+}
+
+.boton {
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 15px;
+    font-family: 'calibri';
+    background: #0066ff;
+    color: white;
+}
+
+#formu h4 {
+    font-family: 'optima';
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#pie {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+#pie footer {
+    border: solid 2px black;
+}
+
+#pie p {
+    text-align: center;
+}

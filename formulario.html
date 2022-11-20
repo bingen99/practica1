@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/formulario.css">
 
 
 
@@ -15,64 +16,62 @@
 </head>
 
 <body>
-  <table border="10" align="center" cellspacing="0">
-    <tr>
-      <th>
-        <h1><i>FORMULARIO</i></h1>
-      </th>
-    </tr>
-  </table><br><br><br><br>
 
-
-  <table border="5" align="center" cellspacing="0">
-    <tr>
-      <th><a href="./index.html">Inicio</a></th>
-      <th><a href="./formulario.html">Formulario</a></th>
-      <th><a href="./tabla.html">Tabla</a></th>
-      <th><a href="./libre.html">Jefes DLC Bloodborne</a></th>
-      <th><a href="./libre2.html">Objetos Isaac Afterbirth +</a></th>
-      <th><a href="./libre3.html">Opinion</a></th>
-    </tr>
-  </table><br><br>
-
-
-
-  <form action="ws/createElement.php" method="post">
-    <label for="name">Nombre:</label>
-    <input type="text" name="nom"><br><br>
-
-    <label for="Descripcion">Descripcion:</label>
-    <input type="text" name="desc"><br><br>
-
-    <label for="Numero serie del elemento">Numero serie del elemento:</label>
-    <input type="number" name="nserie"><br><br>
-
-    <label for="Estado">Estado:</label><br><br>
-    <input type="checkbox" name="estado">activo:<br><br>
-
-
-    <label for="Prioridad">Prioridad:</label><br><br>
-    <input type="radio" name="prioridad" value="alto">alta:<br>
-    <input type="radio" name="prioridad" value="medio">media:<br>
-    <input type="radio" name="prioridad" value="bajo">baja:<br>
-
-
-    <input type="submit">
+  <div id="contenedor">
 
 
 
 
-  </form><br><br><br><br><br>
+
+    <div id="navbar">
 
 
-  <footer>
-
-    <hr>
-    <p align="right">Copyright: Bingen aparicio Otazua</p>
-
-  </footer>
+    </div>
 
 
+
+    <form action="ws/createElement.php" method="post">
+
+      <div id="formu">
+
+        <h4>Formulario</h4>
+        <label for="name">Nombre:</label>
+        <input class="campos" type="text" name="nom">
+
+        <label for="Descripcion">Descripcion:</label>
+        <input class="campos" type="text" name="desc">
+
+        <label for="Numero serie del elemento">Numero serie del elemento:</label>
+        <input class="campos" type="number" name="nserie">
+
+        <label class="est" for="Estado">Estado:</label>
+        <input type="checkbox" name="estado">activo:>
+
+        <label>Prioridad:</label>
+        <div class="radio">
+          <input class="radios" type="radio" name="prioridad" value="alto">alta:
+          <input class="radios" type="radio" name="prioridad" value="medio">media:
+          <input class="radios" type="radio" name="prioridad" value="bajo">baja:
+        </div>
+
+        <input class="boton" type="submit">
+
+      </div>
+
+
+    </form>
+
+
+    <div id="pie">
+
+      <footer>
+        <p>Copyright: Bingen aparicio Otazua</p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/nav.js"></script>
 </body>
 
 </html>
