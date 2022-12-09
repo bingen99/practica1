@@ -1,0 +1,15 @@
+CDN en ingles Content Delivery Network es una red de entrega de contenidos compuesta por diferentes servidores ubicados en diferentes 
+puntos geograficos que contienen copias alojadas en otros servidores, busca optimizar el acceso a la informacion de la red de redes
+
+Ventajas
+Menos trabajo para el servidor: como dijimos antes, su razón principal de ser. Y es que si las visitas acceden a una copia almacenada en otro servidor, en el que está web original trabaja menos y ahorra recursos.
+Hace que cargue más rápido: para empezar por la razón de antes pero es que además, como la señal de Internet tiene que recorrer menos distancia, la web carga antes.
+Una capa más de seguridad: si un pirata informático quiere atacar tu web, en realidad estará atacando una copia, así que la original no se verá afectada.
+Tu web llega a todo el mundo: aunque ya es así sin CDN, como su rendimiento es óptimo en todo el mundo, es más atractiva para diferentes países.
+Las caídas no te quitan visitas: porque en caso de que tu servidor principal o una copia deje de funcionar, se puede acceder a la siguiente más cercana.
+Desventajas
+No es tu web original: como hemos dicho, lo que se distribuye en las CDN es una copia de tu sitio y si no se actualiza, las visitas pueden no acceder a tu último contenido.
+Tienen un sobrecoste: aunque existen redes de distribución de contenidos gratuitas, para soluciones profesionales es casi obligatorio usar una de pago.
+Hay que comprobar las localizaciones: porque imagina que tienes una web en España y detectas que mucha audiencia es de Chile. De nada sirve contratar una CDN que no tenga un servidor cerca del país.
+Ojo con las restricciones: un problema parecido al del punto anterior, solo que aquí es porque algunos gobiernos bloquean las IPs de los principales CDN.
+

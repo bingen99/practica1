@@ -1,3 +1,4 @@
+/*
 const DATOS = [
   {
     nombre: "bingen",
@@ -30,10 +31,178 @@ const DATOS = [
   },
 ];
 
+*/
+
 //con el metodo window.onload lo que hacemos es que cuando la pagina se cargue completamente en el navegador realize la funcion tablarellenadatos y realize lo que hay
 //en su interior
 
-window.onload = function tablarellenadatos() {
+window.onload = obtenerelementos().then((dato) => tablarellenadatos(dato.data));
+
+//crearelementos().then((dato) => tablarellenadatos(dato.data));
+
+function borrafilas(i) {
+  Swal.fire({
+    title: "Estas seguro?",
+    text: "Seguro que quieres eliminar este elemento!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, borralo!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let padre = i.parentNode.parentNode; //con parentNode selecciono el elemento padre de otro elemento
+      document.getElementById("cuerpoTabla").removeChild(padre);
+      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+    }
+  });
+  eliminarelementos();
+}
+
+function filtrado() {
+  let filtrar = document.getElementById("filtrar").value.toLowerCase(); //cojo el input
+
+  if (filtrar.length >= 3) {
+    DATOS.filter((dato) => {
+      let i = DATOS.indexOf(dato);
+      if (document.getElementById("fila" + i) != null) {
+        if (
+          dato.nombre.toLowerCase().includes(filtrar) || //includes nos determina si se encuentra el elemento en el array y devuelve true o false
+          dato.descripcion.toLowerCase().includes(filtrar)
+        ) {
+          document.getElementById("fila" + i).style = "display:table-row;"; //esta linea saca los resultados que coincidan con el filtro dejandolos solos y ocultando los que no coinciden
+        } else {
+          document.getElementById("fila" + i).style = "display:none;"; //esta linea hace desaparecer toda la tabla si no coincide ninguno de los 3 primeros caracteres con los datos de la tabla
+        }
+      }
+    });
+
+    //estas lineas debajo del else son para recuperar la tabla una vez borremos la busqueda realizada en el fitro
+  } else {
+    for (j = 0; j < DATOS.length; j++) {
+      if (document.getElementById("fila" + j) != null)
+        document.getElementById("fila" + j).style = "display:table-row;"; //recupera la tabla entera
+    }
+  }
+}
+
+function modificar(i) {
+  Swal.fire({
+    title: "Estas seguro?",
+    text: "Seguro que quieres modificar un elemento!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si quiero modificarlo!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let tr = i.parentNode.parentNode;
+
+      let tdnombre = tr.children[1].innerHTML;
+      let tddescripcion = tr.children[2].innerHTML;
+      let tdnserie = tr.children[3].innerHTML;
+      let tdestado = tr.children[4].innerHTML;
+      let tdprioridad = tr.children[5].innerHTML;
+
+      tr.children[1].innerHTML =
+        '<input type="text" id="nombrevalue" value="' + tdnombre + '"/>';
+      tr.children[2].innerHTML =
+        '<input type="text" id="descripcionvalue" value="' +
+        tddescripcion +
+        '"/>';
+      tr.children[3].innerHTML =
+        '<input type="text" id="nserievalue" value="' + tdnserie + '"/>';
+      tr.children[4].innerHTML =
+        '<input type="text" id="estadovalue" value="' + tdestado + '"/>';
+      tr.children[5].innerHTML =
+        '<input type="text" id="prioridadvalue" value="' + tdprioridad + '"/>';
+    }
+
+    modificarelementos();
+  });
+}
+
+function guardar(i) {
+  let tr = i.parentNode.parentNode;
+
+  let nombrevalue = document.getElementById("nombrevalue").value;
+  let descripcionvalue = document.getElementById("descripcionvalue").value;
+  let numeroserievalue = document.getElementById("nserievalue").value;
+  let estadovalue = document.getElementById("estadovalue").value;
+  let prioridadvalue = document.getElementById("prioridadvalue").value;
+
+  let tdnombre = tr.children[1].innerHTML;
+  let tddescripcion = tr.children[2].innerHTML;
+  let tdnserie = tr.children[3].innerHTML;
+  let tdestado = tr.children[4].innerHTML;
+  let tdprioridad = tr.children[5].innerHTML;
+
+  tr.children[1].innerHTML = nombrevalue;
+  tr.children[2].innerHTML = descripcionvalue;
+  tr.children[3].innerHTML = numeroserievalue;
+  tr.children[4].innerHTML = estadovalue;
+  tr.children[5].innerHTML = prioridadvalue;
+
+  DATOS.push({
+    nombre: (tdnombre[1] = nombrevalue),
+    descripcion: (tddescripcion[2] = descripcionvalue),
+    numeroserie: (tdnserie[3] = numeroserievalue),
+    estado: (tdestado[4] = estadovalue),
+    prioridad: (tdprioridad[5] = prioridadvalue),
+  });
+
+  DATOS.splice(tr, 1);
+
+  console.log(DATOS);
+}
+
+async function obtenerelementos(DATOS) {
+  const GET = "http://localhost/practica1/ws/getElement.php";
+  return fetch(GET).then((response) => response.json());
+}
+
+async function modificarelementos(id) {
+  const MOD = `http://localhost/practica1/ws/modifyElement.php?id=${id}`;
+
+  let nombre = document.getElementById("nombrevalue").value;
+  let descripcion = document.getElementById("descripcionvalue").value;
+  let nserie = document.getElementById("nserievalue").value;
+  let estado = document.getElementById("estadovalue").value;
+  let prioridad = document.getElementById("prioridadvalue").value;
+
+  return fetch(MOD, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nombre: nombre,
+      descripcion: descripcion,
+      numeroserie: nserie,
+      estado: estado,
+      prioridad: prioridad,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
+
+async function eliminarelementos(id) {
+  return fetch(`http://localhost/practica1/ws/deleteElement.php?id=${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: null,
+  })
+    .then((response) => console.log(response))
+    .catch((e) => {
+      console.log(e);
+    });
+}
+
+function tablarellenadatos(DATOS) {
   const cuerpotabla = document.getElementById("cuerpoTabla"); //aqui cojo el cuerpo de la tabla por su id
 
   for (i = 0; i < DATOS.length; i++) {
@@ -103,94 +272,4 @@ window.onload = function tablarellenadatos() {
 
     cuerpotabla.appendChild(tr);
   }
-};
-
-function borrafilas(i) {
-  let padre = i.parentNode.parentNode; //con parentNode selecciono el elemento padre de otro elemento
-  document.getElementById("cuerpoTabla").removeChild(padre);
-}
-
-function filtrado() {
-  let filtrar = document.getElementById("filtrar").value.toLowerCase(); //cojo el input
-
-  if (filtrar.length >= 3) {
-    DATOS.filter((dato) => {
-      let i = DATOS.indexOf(dato);
-      if (document.getElementById("fila" + i) != null) {
-        if (
-          dato.nombre.toLowerCase().includes(filtrar) || //includes nos determina si se encuentra el elemento en el array y devuelve true o false
-          dato.descripcion.toLowerCase().includes(filtrar)
-        ) {
-          document.getElementById("fila" + i).style = "display:table-row;"; //esta linea saca los resultados que coincidan con el filtro dejandolos solos y ocultando los que no coinciden
-        } else {
-          document.getElementById("fila" + i).style = "display:none;"; //esta linea hace desaparecer toda la tabla si no coincide ninguno de los 3 primeros caracteres con los datos de la tabla
-        }
-      }
-    });
-
-    //estas lineas debajo del else son para recuperar la tabla una vez borremos la busqueda realizada en el fitro
-  } else {
-    for (j = 0; j < DATOS.length; j++) {
-      if (document.getElementById("fila" + j) != null)
-        document.getElementById("fila" + j).style = "display:table-row;"; //recupera la tabla entera
-    }
-  }
-}
-
-function modificar(i) {
-  let tr = i.parentNode.parentNode;
-
-  let botones = tr.children[0];
-  let tdnombre = tr.children[1].innerHTML;
-  let tddescripcion = tr.children[2].innerHTML;
-  let tdnserie = tr.children[3].innerHTML;
-  let tdestado = tr.children[4].innerHTML;
-  let tdprioridad = tr.children[5].innerHTML;
-
-  tr.children[1].innerHTML =
-    '<input type="text" id="nombrevalue" value="' + tdnombre + '"/>';
-  tr.children[2].innerHTML =
-    '<input type="text" id="descripcionvalue" value="' + tddescripcion + '"/>';
-  tr.children[3].innerHTML =
-    '<input type="text" id="nserievalue" value="' + tdnserie + '"/>';
-  tr.children[4].innerHTML =
-    '<input type="text" id="estadovalue" value="' + tdestado + '"/>';
-  tr.children[5].innerHTML =
-    '<input type="text" id="prioridadvalue" value="' + tdprioridad + '"/>';
-}
-
-function guardar(i) {
-  let tr = i.parentNode.parentNode;
-
-  let nombrevalue = document.getElementById("nombrevalue").value;
-  let descripcionvalue = document.getElementById("descripcionvalue").value;
-  let numeroserievalue = document.getElementById("nserievalue").value;
-  let estadovalue = document.getElementById("estadovalue").value;
-  let prioridadvalue = document.getElementById("prioridadvalue").value;
-
-  let botones = tr.children[0];
-
-  let tdnombre = tr.children[1].innerHTML;
-  let tddescripcion = tr.children[2].innerHTML;
-  let tdnserie = tr.children[3].innerHTML;
-  let tdestado = tr.children[4].innerHTML;
-  let tdprioridad = tr.children[5].innerHTML;
-
-  tr.children[1].innerHTML = nombrevalue;
-  tr.children[2].innerHTML = descripcionvalue;
-  tr.children[3].innerHTML = numeroserievalue;
-  tr.children[4].innerHTML = estadovalue;
-  tr.children[5].innerHTML = prioridadvalue;
-
-  DATOS.push({
-    nombre: (tdnombre[1] = nombrevalue),
-    descripcion: (tddescripcion[2] = descripcionvalue),
-    numeroserie: (tdnserie[3] = numeroserievalue),
-    estado: (tdestado[4] = estadovalue),
-    prioridad: (tdprioridad[5] = prioridadvalue),
-  });
-
-  DATOS.splice(tr, 1);
-
-  console.log(DATOS);
 }
