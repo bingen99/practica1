@@ -162,6 +162,49 @@ async function obtenerelementos(DATOS) {
   return fetch(GET).then((response) => response.json());
 }
 
+formulario.addEventListener("submit", async function crearelementos(e) {
+  e.preventDefault();
+
+  Swal.fire({
+    title: "Estas seguro?",
+    text: "Seguro que quieres crear un nuevo elemento!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si quiero crearlo!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let formulario = document.getElementById("formulario");
+      let nombre = document.getElementById("nombres").value;
+      let descripcion = document.getElementById("descripciones").value;
+      let nserie = document.getElementById("numeroseries").value;
+      let estado = document.getElementById("estados").value;
+      let prioridad = document.getElementById("prioridades").value;
+
+      console.log(nombre);
+      console.log(formulario);
+
+      return fetch("http://localhost/practica1/ws/createElement2.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre: nombre,
+          descripcion: descripcion,
+          numeroserie: nserie,
+          estado: estado,
+          prioridad: prioridad,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+      Swal.fire("Creado!", "El elemento ha sido creado.", "success");
+    }
+  });
+});
+
 async function modificarelementos(id) {
   const MOD = `http://localhost/practica1/ws/modifyElement.php?id=${id}`;
 
